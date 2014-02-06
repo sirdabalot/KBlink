@@ -8,7 +8,13 @@ GPIO.setup( 16, GPIO.OUT )
 
 ip = netifaces.ifaddresses("eth0")[2][0]["addr"]
 
-time.sleep( 10 )
+for i in range( 5 ):
+			GPIO.output( 16, 0 )
+			time.sleep( 1 )
+			GPIO.output( 16, 1 )
+			time.sleep( 1 )
+
+time.sleep( 5 )
 
 for i in range( len( ip ) ):
 	print( ip[ i ] )
